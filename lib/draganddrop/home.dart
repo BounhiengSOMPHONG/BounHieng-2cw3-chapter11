@@ -9,7 +9,6 @@ class home extends StatefulWidget {
 
 class _homeState extends State<home> {
   String _gestureDetected = '';
-  Color _paintedColor = Colors.black;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +52,7 @@ class _homeState extends State<home> {
         print('longpress');
         _displayGD('longpress');
       },
-/*       onPanUpdate: (DragUpdateDetails details) {
+      onPanUpdate: (DragUpdateDetails details) {
         print('onPanUpdate: $details');
         _displayGD('onPanUpdate');
       },
@@ -61,15 +60,15 @@ class _homeState extends State<home> {
         print('onVerticalDragUpdate: $details');
         _displayGD('onVerticalDragUpdate:\n$details');
       }),
-      onHorizontalDragUpdate: (DragUpdateDetails details) {
+/*       onHorizontalDragUpdate: (DragUpdateDetails details) {
         print('onHorizontalDragUpdate: $details');
         _displayGD('onHorizontalDragUpdate:\n$details');
       },
       onHorizontalDragEnd: (DragEndDetails details) {
         print('onHorizontalDragEnd: $details');
-        if (details.primaryVelocity < 0) {
+        if (primaryVelocity < 0) {
           print('Dragging Right to Left: ${details.velocity}');
-        } else if (details.primaryVelocity > 0) {
+        } else if (primaryVelocity > 0) {
           print('Dragging Left to Right: ${details.velocity}');
         }
       }, */
@@ -127,7 +126,7 @@ class _homeState extends State<home> {
           acceptedData.isEmpty
               ? Text(
                   'color',
-                  style: TextStyle(color: _paintedColor),
+                  style: TextStyle(color: Colors.deepOrange),
                 )
               : Text(
                   'Painting Color: $acceptedData',
