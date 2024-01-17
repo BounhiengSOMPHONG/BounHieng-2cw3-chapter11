@@ -27,6 +27,7 @@ class _homestateState extends State<homestate> {
             _TFScaleAndTranslate(),
             _TFMatrix4(),
             _PTStatusBar(context),
+            _PTinkwellandinkresponse(context),
           ],
         ),
         onScaleStart: _onScaleStart,
@@ -62,6 +63,66 @@ class _homestateState extends State<homestate> {
         image: AssetImage('images/marinloli.jpg'),
       ),
     );
+  }
+
+  Positioned _PTinkwellandinkresponse(BuildContext context) {
+    return Positioned(
+      top: 50.0,
+      width: MediaQuery.of(context).size.width,
+      child: Container(
+        color: Colors.white54,
+        height: 56.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            InkWell(
+              child: Container(
+                height: 48.0,
+                width: 128.0,
+                color: Colors.black12,
+                child: Icon(
+                  Icons.touch_app,
+                  size: 32.0,
+                ),
+              ),
+              splashColor: Colors.lightGreenAccent,
+              highlightColor: Colors.lightBlueAccent,
+              onTap: _setScaleSmall,
+              onDoubleTap: _setScaleBig,
+              onLongPress: _onLongPress,
+            ),
+            InkResponse(
+              child: Container(
+                height: 48.0,
+                width: 128.0,
+                color: Colors.black12,
+                child: Icon(
+                  Icons.touch_app,
+                  size: 32.0,
+                ),
+              ),
+              splashColor: Colors.lightGreenAccent,
+              highlightColor: Colors.lightBlueAccent,
+              onTap: _setScaleSmall,
+              onDoubleTap: _setScaleBig,
+              onLongPress: _onLongPress,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _setScaleSmall() {
+    setState(() {
+      _currentScale = 0.4;
+    });
+  }
+
+  void _setScaleBig() {
+    setState(() {
+      _currentScale = 12.0;
+    });
   }
 
   Positioned _PTStatusBar(BuildContext context) {
