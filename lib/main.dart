@@ -1,3 +1,4 @@
+import 'package:bounhieng_somphong_2cw3_ch11/Gestures%20for%20Moving%20and%20Scaling/homestate.dart';
 import 'package:bounhieng_somphong_2cw3_ch11/draganddrop/home.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightGreen,
       ),
       debugShowCheckedModeBanner: false,
-      home: home(),
+      home: homestate(),
     );
   }
 }

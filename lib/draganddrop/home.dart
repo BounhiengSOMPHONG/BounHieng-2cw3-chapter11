@@ -54,7 +54,7 @@ class _homeState extends State<home> {
       },
       onPanUpdate: (DragUpdateDetails details) {
         print('onPanUpdate: $details');
-        _displayGD('onPanUpdate');
+        _displayGD('onPanUpdate:\n$details');
       },
       onVerticalDragUpdate: ((DragUpdateDetails details) {
         print('onVerticalDragUpdate: $details');
