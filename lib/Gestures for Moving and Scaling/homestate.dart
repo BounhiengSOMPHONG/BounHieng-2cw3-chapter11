@@ -16,19 +16,24 @@ class _homestateState extends State<homestate> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          _TFScaleAndTranslate(),
-          _TFMatrix4(),
-          _PTStatusBar(context),
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Moving and Scaling'),
       ),
-      onScaleStart: _onScaleStart,
-      onScaleUpdate: _onScaleUpdate,
-      onDoubleTap: _onDoubleTap,
-      onLongPress: _onLongPress,
+      body: GestureDetector(
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            _TFScaleAndTranslate(),
+            _TFMatrix4(),
+            _PTStatusBar(context),
+          ],
+        ),
+        onScaleStart: _onScaleStart,
+        onScaleUpdate: _onScaleUpdate,
+        onDoubleTap: _onDoubleTap,
+        onLongPress: _onLongPress,
+      ),
     );
   }
 
